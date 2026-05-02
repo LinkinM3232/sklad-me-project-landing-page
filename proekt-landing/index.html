@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sklad Me - кто кому должен, теперь не вопрос</title>
+  <meta name="description" content="Sklad Me - мобильное приложение для автоматического подсчёта совместных расходов в малых группах. Соседи, путешествия, корпоративы - без лишних подсчётов и неловких напоминаний." />
+  <meta name="theme-color" content="#141712" />
+  <meta property="og:title" content="Sklad Me - приложение для совместных расходов" />
+  <meta property="og:description" content="Бросайте траты в общий котёл. Мы посчитаем, кто кому должен - и сведём всё к минимуму переводов." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141712'/%3E%3Cpath d='M9 20 Q9 13 16 13 Q23 13 23 20' stroke='%23bc6451' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='20' r='2.2' fill='%23a32126'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Atmospheric fog overlay (covers whole site) -->
+  <div class="fog-layer" aria-hidden="true">
+    <div class="fog fog-1"></div>
+    <div class="fog fog-2"></div>
+    <div class="fog fog-3"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a href="#top" class="logo" aria-label="Sklad Me - на главную">
+      <span class="logo-mark" aria-hidden="true">
+        <img src="public/sklad-logo.png" alt="" width="36" height="36" />
+      </span>
+      <span class="logo-text">sklad <em>me</em></span>
+    </a>
+    <nav class="nav-links" aria-label="Главное меню">
+      <a href="#about">О проекте</a>
+      <a href="#problem">Проблема</a>
+      <a href="#features">Возможности</a>
+      <a href="#survey">Анкета</a>
+    </nav>
+    <a href="#survey" class="btn btn-ghost nav-cta">Пройти анкету →</a>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="public/fog-forest.jpg" alt="" />
+      <div class="hero-vignette"></div>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-badge" aria-hidden="true">
+        <img src="public/sklad-logo.png" alt="" />
+      </div>
+
+      <h1 class="hero-title">
+        <span class="hl">Sklad&nbsp;Me</span><br/>
+        удобный<br/>
+        калькулятор<br/>
+        <em>расчётов.</em>
+      </h1>
+
+      <p class="hero-sub hero-sub-wide">
+        Sklad&nbsp;Me - мобильное приложение, которое тихо считает за вас все
+        совместные траты в группах от&nbsp;2 до&nbsp;10 человек. Без таблиц,
+        без скриншотов из&nbsp;банка, без неловких разговоров.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#survey" class="btn btn-primary">
+          <span>Пройти анкету</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-num">2–10</span>
+          <span class="meta-label">человек в группе</span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="meta-item">
+          <span class="meta-num">0</span>
+          <span class="meta-label">калькуляторов в заметках</span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="meta-item">
+          <span class="meta-num">1</span>
+          <span class="meta-label">упрощённый итог</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about" id="about">
+    <div class="section-head">
+      <span class="section-num">01 / о&nbsp;проекте</span>
+      <h2 class="section-title">
+        Все расходы&nbsp;-<br/> в&nbsp;одном <em>месте.</em>
+      </h2>
+    </div>
+
+    <div class="about-grid">
+      <article class="card card-bordered">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M8 8h8M8 16h5"/></svg>
+        </div>
+        <h3>Что это</h3>
+        <p>Android-приложение для автоматического подсчёта совместных расходов. Заменяет калькулятор, заметки и бесконечную переписку «кто кому должен?»</p>
+      </article>
+
+      <article class="card card-bordered">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2 21a7 7 0 0 1 14 0"/><circle cx="17" cy="6" r="2.5"/><path d="M22 18a5 5 0 0 0-7-4.6"/></svg>
+        </div>
+        <h3>Для&nbsp;кого</h3>
+        <p>Для социально активных людей 18–30 лет: соседей по квартире, путешественников, коллег и одногруппников, которые регулярно делят счёт.</p>
+      </article>
+
+      <article class="card card-bordered">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Что решает</h3>
+        <p>Снимает с вас необходимость держать в голове цепочки долгов и&nbsp;неловкость напоминаний.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEM ===== -->
+  <section class="section problem" id="problem">
+    <div class="problem-bg" aria-hidden="true">
+      <img src="public/misty-road.jpg" alt="" />
+    </div>
+
+    <div class="problem-inner">
+      <span class="section-num light">02 / проблема</span>
+      <h2 class="problem-title">
+        Почему сложно<br/>
+        делить расходы<br/>
+        <em>с&nbsp;друзьями.</em>
+      </h2>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <span class="problem-tag">01</span>
+          <p>Банки умеют делать перевод, но&nbsp;не&nbsp;умеют объяснять, <em>за&nbsp;что</em> он&nbsp;и&nbsp;кто кому остался должен после ужина на&nbsp;шестерых.</p>
+        </div>
+        <div class="problem-card">
+          <span class="problem-tag">02</span>
+          <p>Считать в&nbsp;уме цепочки «Маша - Пете, Петя - Ване, Ваня - мне» неудобно. Записывать в&nbsp;заметках - забывается.</p>
+        </div>
+        <div class="problem-card">
+          <span class="problem-tag">03</span>
+          <p>Напоминать друзьям о&nbsp;деньгах <em>неловко</em>. Многие просто прощаются и&nbsp;машут рукой, но&nbsp;после этого у&nbsp;них остаётся осадок.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOLUTION ===== -->
+  <section class="section solution">
+    <div class="section-head center">
+      <span class="section-num">03 / решение</span>
+      <h2 class="section-title">
+        Вы вносите траты.<br/>
+        Мы&nbsp;считаем <span class="hl">остальное.</span>
+      </h2>
+      <p class="section-lead">
+        Вместо пяти мелких переводов разным людям - один аккуратный итог.
+        Sklad&nbsp;Me сводит баланс группы и&nbsp;показывает минимально
+        необходимое количество транзакций, чтобы все были в&nbsp;расчёте.
+      </p>
+    </div>
+
+    <div class="solution-grid">
+      <!-- Phone mockup -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-status">
+              <span>21:47</span>
+              <span class="phone-status-icons">●●● ▮</span>
+            </div>
+            <div class="phone-header">
+              <div>
+                <div class="phone-h-label">Поездка в&nbsp;Карелию</div>
+                <div class="phone-h-sub">5 участников · 12 трат</div>
+              </div>
+              <div class="phone-balance">
+                <div class="phone-bal-label">Ваш баланс</div>
+                <div class="phone-bal-val">+ 1 850 ₽</div>
+              </div>
+            </div>
+
+            <div class="phone-section-label">последние траты</div>
+            <ul class="phone-list">
+              <li>
+                <span class="ph-emoji">⛽</span>
+                <div class="ph-text">
+                  <strong>Бензин на&nbsp;трассе</strong>
+                  <small>Платил Артём · разбили на&nbsp;5</small>
+                </div>
+                <span class="ph-amt">3 200 ₽</span>
+              </li>
+              <li>
+                <span class="ph-emoji">🍲</span>
+                <div class="ph-text">
+                  <strong>Ужин в&nbsp;Сортавале</strong>
+                  <small>Платила Лера · разбили на&nbsp;5</small>
+                </div>
+                <span class="ph-amt">5 100 ₽</span>
+              </li>
+              <li>
+                <span class="ph-emoji">🏠</span>
+                <div class="ph-text">
+                  <strong>Домик у&nbsp;озера</strong>
+                  <small>Платил вы · разбили на&nbsp;5</small>
+                </div>
+                <span class="ph-amt">12 000 ₽</span>
+              </li>
+            </ul>
+
+            <div class="phone-resolve">
+              <div class="resolve-title">Итог: всего 2&nbsp;перевода</div>
+              <div class="resolve-row">
+                <span>Артём → вам</span>
+                <span class="resolve-amt">1 050 ₽</span>
+              </div>
+              <div class="resolve-row">
+                <span>Лера → вам</span>
+                <span class="resolve-amt">800 ₽</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Steps -->
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">1</span>
+          <h4>Бросаете трату</h4>
+          <p>«Оплатил ужин, 5&nbsp;000&nbsp;₽, платил я, разбить на&nbsp;троих». Пара кликов - и&nbsp;всё зафиксировано.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">2</span>
+          <h4>Приложение сводит баланс</h4>
+          <p>Считает все долги внутри группы и&nbsp;учитывает, кто за&nbsp;что платил, без вашего участия.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">3</span>
+          <h4>Получаете упрощённый итог</h4>
+          <p>Вместо&nbsp;пяти переводов - один-два. С&nbsp;деликатным напоминанием, если кто-то забыл.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== AUDIENCE ===== -->
+  <section class="section audience">
+    <div class="section-head">
+      <span class="section-num">04 / для&nbsp;кого</span>
+      <h2 class="section-title">
+        Кому подойдёт<br/>
+        приложение&nbsp;<em>Sklad&nbsp;Me.</em>
+      </h2>
+    </div>
+
+    <div class="audience-grid">
+
+      <article class="aud-card">
+        <div class="aud-card-top">
+          <span class="aud-tag">сегмент 01</span>
+          <span class="aud-emoji" aria-hidden="true">🏚️</span>
+        </div>
+        <h3>Соседи по&nbsp;квартире</h3>
+        <p>Студенты и&nbsp;молодые специалисты, которые делят аренду, коммуналку, интернет, продукты и&nbsp;стиралку.</p>
+        <ul class="aud-bullets">
+          <li>Регулярные ежемесячные траты</li>
+          <li>Подробный учёт по&nbsp;категориям</li>
+          <li>Автоповтор фиксированных счетов</li>
+        </ul>
+      </article>
+
+      <article class="aud-card">
+        <div class="aud-card-top">
+          <span class="aud-tag">сегмент 02</span>
+          <span class="aud-emoji" aria-hidden="true">🏔️</span>
+        </div>
+        <h3>Компании в&nbsp;путешествиях</h3>
+        <p>Друзья в&nbsp;поездке. Один купил билеты, другой - отель, третий - заправил машину. К&nbsp;концу пути в&nbsp;голове каша.</p>
+        <ul class="aud-bullets">
+          <li>Хаотичные крупные траты</li>
+          <li>Быстрый итог в&nbsp;конце поездки</li>
+          <li>Работает офлайн, синхронизируется потом</li>
+        </ul>
+      </article>
+
+      <article class="aud-card">
+        <div class="aud-card-top">
+          <span class="aud-tag">сегмент 03</span>
+          <span class="aud-emoji" aria-hidden="true">🎂</span>
+        </div>
+        <h3>Коллеги и&nbsp;одногруппники</h3>
+        <p>Разовые сборы: на&nbsp;день&nbsp;рождения, корпоратив, общий подарок, складчина на&nbsp;курс.</p>
+        <ul class="aud-bullets">
+          <li>Ссылка-приглашение в&nbsp;один клик</li>
+          <li>Прозрачно, кто уже скинулся</li>
+          <li>Деликатные напоминания должникам</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="section features" id="features">
+    <div class="section-head">
+      <span class="section-num light">05 / возможности</span>
+      <h2 class="section-title light">
+        Шесть причин<br/>
+        не&nbsp;считать в&nbsp;уме.
+      </h2>
+    </div>
+
+    <div class="features-grid">
+      <div class="feat">
+        <div class="feat-num">01</div>
+        <h4>Авто-расчёт долгов</h4>
+        <p>Вносите трату - система мгновенно пересчитывает балансы всех участников группы.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-num">02</div>
+        <h4>Минимум переводов</h4>
+        <p>Алгоритм сводит цепочки долгов к&nbsp;наименьшему числу транзакций.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-num">03</div>
+        <h4>Push-напоминания</h4>
+        <p>Тактичные уведомления должникам.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-num">04</div>
+        <h4>Ссылка-приглашение</h4>
+        <p>Добавляйте друзей в&nbsp;сбор одной ссылкой прямо из&nbsp;приложения.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-num">05</div>
+        <h4>История и&nbsp;категории</h4>
+        <p>Все траты сохраняются, фильтруются и&nbsp;разбиваются по&nbsp;категориям.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-num">06</div>
+        <h4>Группы до&nbsp;10 человек</h4>
+        <p>Идеально для соседей, поездок и&nbsp;корпоративов - без потери ясности.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SURVEY (mandatory) ===== -->
+  <section class="section survey" id="survey">
+    <div class="survey-card">
+      <div class="survey-left">
+        <span class="section-num">06 / анкета</span>
+        <h2 class="survey-title">
+          Помогите нам<br/>
+          сделать <em>правильное</em><br/>
+          приложение.
+        </h2>
+        <p class="survey-sub">
+          Прежде чем писать код, мы&nbsp;хотим услышать вас:
+          как&nbsp;вы&nbsp;считаете деньги с&nbsp;друзьями сегодня,
+          что&nbsp;бесит и&nbsp;чего&nbsp;не&nbsp;хватает.
+        </p>
+        <ul class="survey-bullets">
+          <li><span class="ck">✓</span>3–4 минуты вашего времени</li>
+          <li><span class="ck">✓</span>Анонимно, без регистрации</li>
+          <li><span class="ck">✓</span>Ваши ответы напрямую влияют на&nbsp;продукт</li>
+        </ul>
+        <div class="survey-actions">
+          <a href="https://forms.gle/" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+            <span>Пройти анкету</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="survey-right" aria-hidden="true">
+        <div class="survey-form-mock">
+          <div class="form-row">
+            <label>Как часто вы&nbsp;делите счёт с&nbsp;друзьями?</label>
+            <div class="form-radio"><span class="dot"></span>каждую неделю</div>
+            <div class="form-radio active"><span class="dot"></span>пару раз в&nbsp;месяц</div>
+            <div class="form-radio"><span class="dot"></span>несколько раз в&nbsp;год</div>
+          </div>
+          <div class="form-row">
+            <label>Чем сейчас считаете долги?</label>
+            <div class="chip-row">
+              <span class="chip">калькулятор</span>
+              <span class="chip active">заметки</span>
+              <span class="chip">переписка</span>
+              <span class="chip">в&nbsp;уме</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <label>Что бесит больше всего?</label>
+            <div class="form-input">забыть, кто за&nbsp;что заплатил</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contacts">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo logo-lg">
+          <span class="logo-mark logo-mark-lg" aria-hidden="true">
+            <img src="public/sklad-logo.png" alt="" width="44" height="44" />
+          </span>
+          <span class="logo-text">sklad <em>me</em></span>
+        </div>
+        <p class="footer-tag">
+          Тихое приложение для&nbsp;шумных трат.
+        </p>
+
+        <a href="#survey" class="btn btn-primary">
+          <span>Пройти анкету</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Проект</h5>
+          <a href="#about">О проекте</a>
+          <a href="#problem">Проблема</a>
+          <a href="#features">Возможности</a>
+        </div>
+        <div class="footer-col">
+          <h5>Связь</h5>
+          <a href="mailto:hello@sklad.me">hello@sklad.me</a>
+          <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
+          <a href="#survey">Анкета</a>
+        </div>
+        <div class="footer-col">
+          <h5>Платформа</h5>
+          <span class="muted">Android · скоро</span>
+          <span class="muted">iOS · позже</span>
+          <span class="muted">Web · в&nbsp;планах</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 · Sklad Me · студенческий проект</span>
+    </div>
+  </footer>
+
+</body>
+</html>
